@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>WebChat</title>
+    <link rel="stylesheet" href="home.css" />
+    <!-- Add Firebase SDK -->
+    <script src="https://www.gstatic.com/firebasejs/8.10.0/firebase.js"></script>
+    <!-- Add Firebase Authentication SDK -->
+    <script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-auth.js"></script>
+  </head>
+  <body>
+    <div class="wrapper">
+      <div class="topuppergreen">
+        <div class="logo">
+          <img src="../../../assets/logo.svg" alt="" srcset="" />
+          <span>WHATSAPP WEB</span>
+        </div>
+      </div>
+
+      <div class="maincontent">
+        <div class="phoneno">
+          <div class="z">
+            <span class="x">Enter Phone Number</span>
+          </div>
+          <p class="y">
+            Select a country and enter your WhatsApp phone number.
+          </p>
+
+          <div class="form">
+            <form class="mainform" id="phone-verification-form">
+              <div class="choosecountry">
+                <select name="" id="country-code">
+                  <option value="+91">🇮🇳 India</option>
+                </select>
+                <!-- <img src="../../../assets/down-side-arrow.svg" alt="" srcset="" style="width: 10px;height: 10px;"> -->
+              </div>
+
+              <input
+                type="tel"
+                id="phone-number"
+                placeholder="Enter Your Phone Number"
+              />
+              <!-- invisible reCAPTCHA element -->
+              <!-- <div class="g-recaptcha" data-sitekey="6Ld4b_EoAAAAAK_R1z8AOkH1N5vJKy0-nL1YGspG" style="display: none;"></div> -->
+
+              <div
+                id="recaptcha-container"
+                data-sitekey="6LeDHPYoAAAAAOHN0rmBiakFAm9U60Yi6dpIMEBH"
+              ></div>
+              <!-- <div id="recaptcha-container" data-sitekey="6Ld4b_EoAAAAAK_R1z8AOkH1N5vJKy0-nL1YGspG" timeout="10000"></div> -->
+
+              <button id="verify-button">NEXT</button>
+            </form>
+          </div>
+
+          <div class="linkqr">
+            <span><a href="#">Link With QR Code</a></span>
+          </div>
+
+          <div class="tutorial">
+            <span>Tutorial</span>
+
+            <p>Need Help To Get Started?</p>
+
+            <div class="img">
+              <img
+                class="tutorialimg"
+                src="../../../assets/qr-video-hq_c001ebd6ddb0ba5fc7de491dfb556024.png"
+                alt=""
+                srcset=""
+              />
+              <div class="playicon">
+                <img
+                  class="playiconsvg"
+                  src="../../../assets/play.svg"
+                  alt=""
+                  srcset=""
+                />
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <script type="module" src="./home.js"></script>
+  </body>
+</html>
