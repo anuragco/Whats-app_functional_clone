@@ -11,6 +11,14 @@ const firebaseConfig = {
   
   // Initialize Firebase
   firebase.initializeApp(firebaseConfig);
+
+  document.addEventListener("DOMContentLoaded", () => {
+    const isloginpresent = localStorage.getItem('islogin')
+
+    if(!isloginpresent){
+      window.location.href= '../../Login-Module/initial-screen/home.html'
+    }
+  })
   
   // Event listener for file input change
   document.getElementById('file-input').addEventListener('change', handleFileInputChange);

@@ -50,6 +50,7 @@ document.addEventListener("DOMContentLoaded", function () {
                 // User data already exists, store photoURL in localStorage
                 const userData = doc.data();
                 localStorage.setItem("userPhotoURL", userData.photoURL);
+                localStorage.setItem('isLogin', true);
 
                 // Redirect to the main home section
                 alert("User data already exists");
