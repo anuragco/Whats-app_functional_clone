@@ -53,14 +53,14 @@ document.addEventListener("DOMContentLoaded", function () {
                 localStorage.setItem('isLogin', true);
 
                 // Redirect to the main home section
-                alert("User data already exists");
+                
                 window.location.href =
                   "../../chating-home-module/Set-photo-name/Mainhome/web.html";
               } else {
                 // User data doesn't exist, redirect to the next screen
-                alert("User data not found");
+                localStorage.setItem('isLogin', true);
                 window.location.href =
-                  "../../chating-home-module/Set-photo-name/first-step.html"; // Replace with the actual path
+                  "../../chating-home-module/Set-photo-name/first-step.html"; 
               }
             })
             .catch(function (error) {
