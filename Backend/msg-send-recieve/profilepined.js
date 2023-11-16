@@ -27,8 +27,36 @@ document.addEventListener('DOMContentLoaded', function () {
         return document.getElementById(profileID) !== null;
     }
 
-    // Function to append the profile to the home screen
-    function appendProfileToHomeScreen(container, profileID, receiverUID) {
+   
+
+    // Function to get user data based on UID (replace this with your actual function)
+    function getUserData(uid) {
+        // Implement your logic to fetch user data from Firestore or any other source
+        // Return an object with user details (e.g., { name: 'John Doe', photoURL: 'path/to/image.jpg' })
+        // You need to fetch lastMessage and timestamp here
+        const urlofsender = localStorage.getItem('userPhotoURL');
+        const usernumber = localStorage.getItem('phonenumber');
+
+        // Simulating data fetching (replace this with your actual logic)
+        const lastMessage = "Hello, how are you?";
+        const timestamp = new Date(); // Replace with the actual timestamp
+
+        return {
+            name: usernumber,
+            photoURL: urlofsender,
+            lastMessage: lastMessage,
+            timestamp: timestamp,
+        };
+    }
+
+    // Function to format timestamp (replace this with your actual formatting logic)
+    function formatTimestamp(timestamp) {
+        // Implement your logic to format the timestamp (e.g., using Moment.js)
+        return timestamp.toLocaleString(); // Adjust this based on your requirements
+    }
+
+     // Function to append the profile to the home screen
+     function appendProfileToHomeScreen(container, profileID, receiverUID) {
         const userData = getUserData(receiverUID);
 
         if (userData) {
@@ -37,36 +65,20 @@ document.addEventListener('DOMContentLoaded', function () {
             profileElement.setAttribute('id', profileID);
 
             profileElement.innerHTML = `
-            <div class="user">
                 <div class="userimg">
                     <img src="${userData.photoURL}" alt="Profile Image">
                 </div>
                 <div class="usernamediv">
                     <span class="username">${userData.name}</span>
                     <span class="lastmsg">${userData.lastMessage}</span>
-
                 </div>
                 <div class="lasttimemsgbadge">
-                <span>${userData.timestamp}</span>
-               </div>
+                    <span>${formatTimestamp(userData.timestamp)}</span>
                 </div>
             `;
 
             container.appendChild(profileElement);
         }
-    }
-
-    // Function to get user data based on UID (replace this with your actual function)
-    function getUserData(uid) {
-        // Implement your logic to fetch user data from Firestore or any other source
-        // Return an object with user details (e.g., { name: 'John Doe', photoURL: 'path/to/image.jpg' })
-       const urlofsender = localStorage.getItem('userPhotoURL');
-       const usernumber = localStorage.getItem('phonenumber');
-
-        return {
-            name: usernumber,
-            photoURL: urlofsender,
-        };
     }
 
     // Example: Listen for incoming messages (adjust according to your structure)

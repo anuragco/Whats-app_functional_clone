@@ -98,13 +98,18 @@ const firebaseConfig = {
     function updateHeaderProfile(userData) {
       headerProfileImage.src = userData.photoURL;
       headerUsername.innerText = userData.name;
+      
+      // Clear the search input value
+      const profilesearcchcontainer = document.getElementById('search-input');
+      profilesearcchcontainer.value = '';
   
       // Store the phoneNumber in sessionStorage
       sessionStorage.setItem('selectedUserPhoneNumber', userData.phoneNumber);
-  
+      
       // For additional debugging, log the entire userData object
       console.log('userData:', userData);
-    }
+  }
+  
   
     // Add your existing code for chat functionality here
   });
