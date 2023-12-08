@@ -6,4 +6,4 @@ Backend/*.js
 
 
 # Exclude the "Backend" folder
-Backend/
+Backend/*.js
