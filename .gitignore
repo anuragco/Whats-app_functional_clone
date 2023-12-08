@@ -1,2 +1,9 @@
+Backend/*.js
+.htaccess
+
+# Ignore all CSS files
+**/*.css
+
+
+# Exclude the "Backend" folder
 Backend/
-Frontend/*.css
